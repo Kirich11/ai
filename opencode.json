@@ -60,6 +60,7 @@
     "agent": {
         "PO": {
             "mode": "primary",
+            "description": "product owner",
             "model": "github-copilot/claude-opus-4.6",
             "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman full \n USE ProductOwner agent",
             "permissions": {
@@ -71,10 +72,39 @@
                 }
             }
         },
+        "Architect": {
+            "mode": "subagent",
+            "description": "architect",
+            "model": "github-copilot/claude-opus-4.6",
+            "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman ultra \n USE ARCHITECT agent",
+            "permissions": {
+                "write": false,
+                "edit": false,
+                "bash": false,
+                "skill": {
+                    "caveman": true
+                }
+            }
+        },
+        "Critic": {
+            "mode": "subagent",
+            "description": "critic",
+            "model": "github-copilot/claude-opus-4.6",
+            "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman ultra \n USE CRITIC agent",
+            "permissions": {
+                "write": false,
+                "edit": false,
+                "bash": false,
+                "skill": {
+                    "caveman": true
+                }
+            }
+        },
         "Developer": {
             "mode": "subagent",
+            "description": "developer",
             "model": "github-copilot/claude-opus-4.6",
-            "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman full \n USE Developer agent",
+            "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman ultra \n USE Developer agent",
             "permissions": {
                 "write": true,
                 "edit": true,
@@ -88,8 +118,9 @@
         },
         "Tester": {
             "mode": "subagent",
+            "description": "tester",
             "model": "github-copilot/claude-opus-4.6",
-            "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman full \n USE TESTER agent",
+            "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman ultra \n USE TESTER agent",
             "permissions": {
                 "write": true,
                 "edit": true,
@@ -103,8 +134,9 @@
         },
         "Reviewer": {
             "mode": "subagent",
+            "description": "reviewer",
             "model": "github-copilot/claude-opus-4.6",
-            "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman full \n USE REVIEWER agent",
+            "prompt": "{file:~/Projects/ai/AGENTS.md}\n /caveman ultra \n USE REVIEWER agent",
             "permissions": {
                 "write": false,
                 "edit": false,
